@@ -1,6 +1,7 @@
 import Card from "./Card";
 
-export default function Cards({ characters }) {
+export default function Cards({ characters, onClose }) {
+  //const onClose = () => window.alert("Emulamos que se cierra la card");
   return (
     <div>
       {characters &&
@@ -15,7 +16,7 @@ export default function Cards({ characters }) {
               gender={element.gender}
               origin={element.origin.name}
               image={element.image}
-              onClose={() => window.alert("Emulamos que se cierra la card")}
+              onClose={onClose}
             ></Card>
           );
         })}
