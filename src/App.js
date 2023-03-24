@@ -1,10 +1,12 @@
 import "./App.css";
-import Cards from "./components/Cards.jsx";
-import Nav from "./components/Nav";
+import Cards from "./components/Cards/Cards.jsx";
+import Nav from "./components/Nav/Nav";
 import { useState } from "react";
 import axios from "axios";
-//import SearchBar from "./components/SearchBar.jsx";
-//import characters from "./data.js";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/Views/About/About";
+import Detail from "./components/Views/Detail/Detail";
+import Error404 from "./components/Views/Error404/Error404";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -32,11 +34,26 @@ function App() {
     });
   }
 
+  // function Caracter() {
+  //   setCharacters((oldChars) => {
+  //     const randomIndex = Math.floor(Math.random() * characters.length);
+  //     const newCharacter = characters[randomIndex];
+  //     return [...oldChars, newCharacter];
+  //   });
+  // }
+
   return (
     <div className="App">
-      {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> */}
       <Nav onSearch={onSearch} />
-      <Cards onClose={onClose} characters={characters} />
+      <Routes>
+        <Route
+          path="/home"
+          element={<Cards onClose={onClose} characters={characters} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
     </div>
   );
 }

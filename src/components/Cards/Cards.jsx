@@ -1,7 +1,6 @@
-import Card from "./Card";
+import Card from "../Card/Card";
 
 export default function Cards({ characters, onClose }) {
-  //const onClose = () => window.alert("Emulamos que se cierra la card");
   return (
     <div>
       {characters &&
