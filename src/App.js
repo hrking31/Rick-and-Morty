@@ -1,15 +1,32 @@
 import "./App.css";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/Views/About/About";
 import Detail from "./components/Views/Detail/Detail";
 import Error404 from "./components/Views/Error404/Error404";
+import Form from "./components/Form/Form";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const location = useLocation();
+  const [access, setAccess] = useState(false);
+  const navigate = useNavigate();
+
+  const EMAIL = "hrking31@gmail.com";
+  const PASSWORD = "3125reyaz";
+  const login = (userData) => {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate("/home");
+    }
+  };
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
 
   function onSearch(id) {
     axios(`https://rickandmortyapi.com/api/character/${id}`).then(
@@ -44,7 +61,11 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
+      {location.pathname === "/" ? (
+        <Form login={login} />
+      ) : (
+        <Nav onSearch={onSearch} />
+      )}
       <Routes>
         <Route
           path="/home"
@@ -52,7 +73,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="*" element={<Error404 />} />
+        {/* <Route path="*" element={<Error404 />} /> */}
       </Routes>
     </div>
   );
