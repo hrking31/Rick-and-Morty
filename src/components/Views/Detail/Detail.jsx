@@ -1,3 +1,4 @@
+import style from "../../styles/Detail.module.css";
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
@@ -22,7 +23,7 @@ export default function Detail() {
   }, [id]);
 
   return (
-    <div>
+    <div className={style.detail}>
       <h2>{character.name}</h2>
       <h2>STATUS | {character.status}</h2>
       <h2>SPECIE | {character.species}</h2>

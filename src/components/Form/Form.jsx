@@ -52,7 +52,7 @@ export default function Form({ login }) {
           value={userData.password}
           onChange={handleChange}
         />
-        {errors.password && <p style={{ color: "blue" }}>{errors.password}</p>}
+        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
         <button>Submit</button>
       </form>
     </div>

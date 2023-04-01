@@ -6,7 +6,7 @@ import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/Views/About/About";
 import Detail from "./components/Views/Detail/Detail";
-// import Error404 from "./components/Views/Error404/Error404";
+import Error404 from "./components/Views/Error404/Error404";
 import Form from "./components/Form/Form";
 //import images from "./assets/images";
 
@@ -61,21 +61,17 @@ function App() {
 
   return (
     <div className={style.app}>
-      {location.pathname === "/" ? (
-        <Form login={login} />
-      ) : (
-        <Nav onSearch={onSearch} />
-      )}
+      {location.pathname === "/" ? null : <Nav onSearch={onSearch} />}
       {/* <img src={images.img4} /> */}
       <Routes>
+        <Route path="/" element={<Form login={login} />}></Route>
         <Route
           path="/home"
           element={<Cards onClose={onClose} characters={characters} />}
         />
-        {/* <img src={logo} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
-        {/* <Route path="*" element={<Error404 />} /> */}
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );
