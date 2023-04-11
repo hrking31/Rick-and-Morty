@@ -1,5 +1,4 @@
 import style from "../styles/Form.module.css";
-import images from "../../assets/images";
 import React, { useState } from "react";
 import validation from "./validation";
 
@@ -36,7 +35,7 @@ export default function Form({ login }) {
   return (
     <div className={style.container}>
       <form className={style.form} onSubmit={handleSubmit}>
-        <label htlmFor="email">Email</label>
+        <label htlmFor="email">Correo Electronico</label>
         <input
           type="email"
           name="email"
@@ -53,7 +52,7 @@ export default function Form({ login }) {
           onChange={handleChange}
         />
         {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
-        <button>Submit</button>
+        <button>INGRESAR</button>
       </form>
     </div>
   );
