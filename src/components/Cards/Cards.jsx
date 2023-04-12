@@ -18,7 +18,7 @@ export default function Cards({ characters, onClose }) {
                 origin={element.origin.name}
                 image={element.image}
                 onClose={onClose}
-              ></Card>
+              />
             );
           })}
       </div>

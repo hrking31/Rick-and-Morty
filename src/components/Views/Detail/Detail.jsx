@@ -23,13 +23,28 @@ export default function Detail() {
   }, [id]);
 
   return (
-    <div className={style.detail}>
-      <h2>{character.name}</h2>
-      <h2>STATUS | {character.status}</h2>
-      <h2>SPECIE | {character.species}</h2>
-      <h2>GENDER | {character.gender}</h2>
-      <h2>ORIGIN | {character.origin?.name}</h2>
-      <img src={character.image} alt={character.name} />
+    <div className={style.containerDetail}>
+      <div className={style.name}>
+        <h1>{character.name}</h1>
+      </div>
+      <div className={style.containerInfo}>
+        <div className={style.infoCharacter}>
+          <div className={style.status}>
+            <h1>{character.status}</h1>
+          </div>
+          <div>
+            <h1>{character.species}</h1>
+            <h4>SPECIE</h4>
+            <h1>{character.gender}</h1>
+            <h4>GENDER</h4>
+            <h1>{character.origin?.name}</h1>
+            <h4 className={style.origin}>ORIGIN</h4>
+          </div>
+        </div>
+        <div className={style.imgCharacter}>
+          <img src={character.image} alt={character.name} />
+        </div>
+      </div>
     </div>
   );
 }

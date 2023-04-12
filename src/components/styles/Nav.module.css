@@ -3,19 +3,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  /* background-image: linear-gradient( rgba(39 221 241 / 0.2), rgba(39 221 241 / 0.2)); */
   background-image: linear-gradient(
-    rgba(15 92 102 / 0.2),
-    rgba(15 92 102 / 0.2)
+    rgba(7, 126, 53, 0.2),
+    rgba(7, 126, 53, 0.2)
   );
   border-bottom: 2px solid #4d4b4b;
   box-shadow: 0px 8px 20px 0px rgb(92, 155, 143);
 }
 
-.navButtons,
+/* .navButtons,
 .navSearchLogout {
   display: flex;
-}
+} */
 .navButtons button {
   margin-right: 1.8rem;
   border-width: 1px;

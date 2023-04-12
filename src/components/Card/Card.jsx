@@ -6,7 +6,12 @@ export default function Card(props) {
     <div>
       <div className={style.card}>
         <div className={style.close}>
-          <button onClick={() => props.onClose(props.id)}>X</button>
+          <button
+            className={style.closeBtn}
+            onClick={() => props.onClose(props.id)}
+          >
+            ❎
+          </button>
         </div>
 
         <div className={style.cardBody}>
@@ -17,6 +22,10 @@ export default function Card(props) {
           {/* <h2>{props.species}</h2> */}
           {/* <h2>{props.gender}</h2> */}
           {/* <h2>{props.origin}</h2> */}
+        </div>
+
+        <div className={style.fav}>
+          <button className={style.favoriteBtn}>❤️</button>
         </div>
 
         <div className={style.cardImage}>

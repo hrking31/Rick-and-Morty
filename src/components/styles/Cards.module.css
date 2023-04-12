@@ -1,6 +1,12 @@
 .cards_container {
+  width: 100%;
+  max-width: 1400px;
+  height: 430px;
   display: flex;
   flex-wrap: wrap;
-  padding: 24px;
-  justify-content: space-around;
+  justify-content: center;
+  margin: auto;
+  margin-top: 40px;
+  padding-bottom: 40px;
+  z-index: 1;
 }

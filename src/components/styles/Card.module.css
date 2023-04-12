@@ -61,6 +61,28 @@
   opacity: 100%;
 }
 
+.fav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.favoriteBtn {
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  margin: 12px;
+  background-color: transparent;
+  opacity: 50%;
+  transition: transform 500ms ease;
+}
+.favoriteBtn:hover {
+  color: red;
+  transform: scale(1.5);
+  opacity: 100%;
+}
+
 .cardBody {
   margin-top: 12px;
   margin-bottom: 18px;
