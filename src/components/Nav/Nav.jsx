@@ -6,7 +6,7 @@ import style from "../styles/Nav.module.css";
 export default function Nav(props) {
   return (
     <div className={style.nav}>
-      <div>
+      <div className={style.navButtons}>
         <Link to="/">
           <button>Log Out</button>
         </Link>
@@ -16,9 +16,9 @@ export default function Nav(props) {
         <Link to="/home">
           <button>HOME</button>
         </Link>
-        {/* <button>Random Character</button> */}
-        <SearchBar onSearch={props.onSearch} />
       </div>
+      {/* <button>Random Character</button> */}
+      <SearchBar onSearch={props.onSearch} />
     </div>
   );
 }

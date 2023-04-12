@@ -34,25 +34,36 @@ export default function Form({ login }) {
 
   return (
     <div className={style.container}>
+      <div className={style.container2}>
+        <h2>Welcome!</h2>
+      </div>
       <form className={style.form} onSubmit={handleSubmit}>
-        <label htlmFor="email">Correo Electronico</label>
-        <input
-          type="email"
-          name="email"
-          value={userData.email}
-          autoComplete="off"
-          onChange={handleChange}
-        />
-        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
-        <label htlmFor="password">Password</label>
-        <input
-          type="text"
-          name="password"
-          value={userData.password}
-          onChange={handleChange}
-        />
-        {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
-        <button>INGRESAR</button>
+        <div className={style.field}>
+          <label htlmFor="email">Email</label>
+          <input
+            className={errors.email ? style.error : style.success}
+            type="email"
+            name="email"
+            value={userData.email}
+            autoComplete="off"
+            placeholder=" Enter your email..."
+            onChange={handleChange}
+          />
+          <p className={style.danger}>{errors.email}</p>
+        </div>
+        <div className={style.field}>
+          <label htlmFor="password">Password</label>
+          <input
+            className={errors.password ? style.error : style.success}
+            type="text"
+            name="password"
+            value={userData.password}
+            placeholder=" Password..."
+            onChange={handleChange}
+          />
+          <p className={style.danger}>{errors.password}</p>
+        </div>
+        <button className={style.submitButton}>Log In</button>
       </form>
     </div>
   );
