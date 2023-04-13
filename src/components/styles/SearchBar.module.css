@@ -1,10 +1,11 @@
 .search {
-  border: 2px solid rgb(93, 159, 146);
+  border: 2px solid rgb(8, 228, 19);
   border-radius: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   padding: 0.4rem 0.6rem;
   width: 18rem;
+  background-color: rgba(191, 220, 236, 0.473);
 }
 
 .buttonSearch {
@@ -15,15 +16,15 @@
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: bold;
-  color: white;
-  background-color: rgb(44, 164, 140);
-  border: 2px solid rgb(112, 199, 181);
+  color: black;
+  background-color: rgba(191, 220, 236, 0.473);
+  border: 2px solid rgb(8, 228, 19);
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
 .buttonSearch:hover {
-  background-color: rgb(27, 104, 88);
+  background-color: rgb(191, 220, 236);
   cursor: pointer;
 }
 

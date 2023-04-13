@@ -6,15 +6,18 @@ import style from "../styles/Nav.module.css";
 export default function Nav(props) {
   return (
     <div className={style.nav}>
+      <Link to="/">
+        <button className={style.logout}>Logout</button>
+      </Link>
       <div className={style.navButtons}>
-        <Link to="/">
-          <button>Log Out</button>
-        </Link>
         <Link to="/about">
-          <button>ABOUT</button>
+          <button>About</button>
         </Link>
         <Link to="/home">
-          <button>HOME</button>
+          <button>Home</button>
+        </Link>
+        <Link to="/favorites">
+          <button>Favorites</button>
         </Link>
       </div>
       {/* <button>Random Character</button> */}
