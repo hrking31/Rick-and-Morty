@@ -37,3 +37,13 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .searchBar {
+    display: flex;
+    margin-top: 10px;
+  }
+  .search {
+    width: 100%;
+  }
+}

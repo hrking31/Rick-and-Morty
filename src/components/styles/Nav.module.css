@@ -48,3 +48,16 @@
   background-color: rgb(191, 220, 236);
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logout {
+    height: 36px;
+    align-self: end;
+    width: 85px;
+  }
+}
